@@ -14,53 +14,7 @@ const existingClassMap = {
   wrapper: "op",
 };
 
-const keywordArrays = {
-  DataTypes: ["byte", "short", "int", "long", "float", "double", "char", "boolean", "null"],
-  ControlFlow: ["if", "else", "switch", "case", "default", "for", "while", "do", "break", "continue", "return"],
-  ClassAndObjectManagement: ["class", "interface", "extends", "implements", "new", "this", "super", "instanceof"],
-  AccessModifiers: ["public", "private", "protected", "static", "final"],
-  ExceptionHandling: ["try", "catch", "finally", "throw", "throws"],
-  OtherKeywords: ["void", "package", "import", "enum", "assert", "transient", "volatile", "synchronized", "native", "strictfp"],
-  AndroidLifecycleKeywords: ["onCreate()", "onStart()", "onResume()", "onPause()", "onStop()", "onDestroy()", "onRestart()"],
-  UIComponents: ["Activity", "Fragment", "View", "Button", "TextView", "RecyclerView", "ListView"],
-  IntentsAndNavigation: ["Intent", "Bundle", "startActivity()", "startService()"],
-  AsynchronousOperations: ["AsyncTask", "Handler", "Thread", "Runnable"],
-  Annotations: ["Override", "NonNull", "Nullable", "SuppressLint"],
-  Wrapper: ["String", "Date", "Byte", "Short", "Integer", "Float", "Double", "Boolean", "Character"],
-  WellknownRefTypes: [  
-    // Collections Framework  
-    'List', 'ArrayList', 'LinkedList', 'Vector', 'Stack', 'Queue', 'Deque', 'PriorityQueue',  
-    'Set', 'HashSet', 'LinkedHashSet', 'TreeSet',  
-    'Map', 'HashMap', 'LinkedHashMap', 'TreeMap', 'ConcurrentHashMap',  
-    'Collections', 'Arrays',  
-    // Regular Expressions  
-    'Pattern', 'Matcher',  
-    // File Handling  
-    'File', 'FileInputStream', 'FileOutputStream', 'BufferedReader', 'BufferedWriter', 'PrintWriter',  
-    'Scanner', 'RandomAccessFile',  
-    // Date and Time  
-    'Date', 'Calendar', 'TimeZone', 'LocalDate', 'LocalTime', 'LocalDateTime', 'Instant', 'Duration',  
-    // Threading & Concurrency  
-    'Thread', 'Runnable', 'ExecutorService', 'ThreadPoolExecutor', 'Future', 'Semaphore', 'CountDownLatch',  
-    // Math & Number Handling  
-    'Math', 'BigInteger', 'BigDecimal', 'Random',  
-    // I/O Streams  
-    'InputStream', 'OutputStream', 'FileReader', 'FileWriter', 'ObjectInputStream', 'ObjectOutputStream',  
-    // Android-Specific Classes  
-    'Context', 'Activity', 'Fragment', 'Intent', 'Bundle', 'Handler', 'Looper', 'View',  
-    'TextView', 'EditText', 'Button', 'ImageView', 'RecyclerView', 'SharedPreferences',  
-    'Toast', 'AlertDialog', 'Notification', 'PendingIntent',  
-    // JSON Handling  
-    'JSONObject', 'JSONArray', 'Gson', 'JsonParser','JSONException',  
-    // Networking  
-    'URL', 'HttpURLConnection', 'OkHttpClient', 'Request', 'Response', 'Retrofit',  
-    // Reflection  
-    'Class', 'Method', 'Field', 'Constructor',,
-    // Socket
-    'WebSocket', 'WebSocketListener',
-    // Log
-    'Log']
-};
+
 
 const spanClassMap = {
   DataTypes: "data-type",
@@ -82,7 +36,7 @@ function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-export function formatJavaSourceCode(text) {
+export function formatJavaSourceCode(text, keywordArrays) {
   // Step 1: Validate keywordArrays
   if (typeof keywordArrays !== "object" || keywordArrays === null) {
     throw new Error("keywordArrays must be a valid object");
