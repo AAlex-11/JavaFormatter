@@ -12,6 +12,21 @@ const existingClassMap = {
   annotation: "asp",
   "wellknown-ref-types": "op",
   wrapper: "op",
+ "function-keyword": "kwrd",
+ "variable-declaration": "kwrd",
+  "dom-manipulation": "kwrd",
+  "json-handling": "kwrd",
+  "es6-feature": "kwrd",
+  "web-api": "kwrd",
+  "framework-library": "kwrd",
+  "testing": "kwrd",
+  "build-tool": "kwrd",
+  "nodejs": "kwrd",
+  "react-keyword": "kwrd",
+  "vue-keyword": "kwrd",
+  "angular-keyword": "kwrd",
+  "typescript-keyword": "kwrd",
+   "utility-library": "kwrd"
 };
 
 
@@ -30,6 +45,21 @@ const spanClassMap = {
   Annotations: "annotation",
   WellknownRefTypes: "wellknown-ref-types",
   Wrapper: "wrapper",
+  FunctionKeywords: "function-keyword",
+  VariableDeclarations: "variable-declaration",
+  DOMManipulation: "dom-manipulation",
+  JSONHandling: "json-handling",
+  ES6Features: "es6-feature",
+  WebAPIs: "web-api",
+  FrameworksAndLibraries: "framework-library",
+  Testing: "testing",
+  BuildTools: "build-tool",
+  NodeJS: "nodejs",
+  ReactKeywords: "react-keyword",
+  VueKeywords: "vue-keyword",
+  AngularKeywords: "angular-keyword",
+  TypeScriptKeywords: "typescript-keyword",
+  UtilityLibraries: "utility-library"
 };
 
 function escapeRegExp(string) {
